@@ -1,0 +1,32 @@
+
+\newgeometry{top=5cm,left=1cm,bottom=1cm,right=1cm}
+\begin{flushleft}
+\pagenumbering{gobble}
+% Upper part of the page. The '~' is needed because \\
+% only works if a paragraph has started.
+%\includegraphics[width=0.15\textwidth]{./logo}~\\[1cm]
+
+\textsc{\LARGE \bfseries \ASSNMT}\\
+
+\textsc{\Large \CLASS}\\[0.2cm]
+\linethickness{0.5mm}
+{\color{MidnightBlue}\line(1,0){350}} \\ [5.0cm]
+
+% Author and supervisor
+\begin{minipage}{0.8\textwidth}
+\begin{flushleft} \large
+\emph{Submitted By: Jesse Millwood \Partner} \\
+\emph{Date Submitted: \DATE}
+\end{flushleft}
+\end{minipage}
+
+
+\vfill
+
+% Bottom of the page
+\begin{center}
+{\large Grand Valley State University}
+\end{center}
+\end{flushleft}
+\restoregeometry
+\newpage

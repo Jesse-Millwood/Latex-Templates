@@ -1,0 +1,79 @@
+\documentclass{article}
+% Commands
+\newcommand{\CLASS}{EGR323 - Signals and Systems}
+%\newcommand{\CLASS}{EGR343 - Applied Electromagnetics}
+%\newcommand{\CLASS}{EGR330 - Power Systems Analysis}
+\newcommand{\Partner}{ }
+\newcommand{\ASSNMT}{Learning Activity One}
+\newcommand{\DATE}{May 15 2014}
+
+% Packages
+\usepackage{geometry}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{caption}
+% Packages for Pygments
+\usepackage{fancyvrb}
+\usepackage{color}
+\usepackage[utf8]{inputenc}
+% For making floating objects (tables) not be repositioned
+% use "H" modifier for tables (\begin{table}[H])
+\usepackage{float}
+\restylefloat{table}
+% For text subscripts
+\usepackage{fixltx2e}
+
+\input{/home/jesse/Latex/Templates/Pygments.tex}
+
+
+\begin{document}
+% Title Page
+\input{/home/jesse/Latex/Templates/title.tex}
+% Define Page Geometry
+{\newgeometry{left=0.8in, right=0.8in, top=1in, bottom=1in}
+% Page Numbers
+\pagenumbering{arabic}
+% No paragraph indents
+\setlength{\parindent}{0cm}
+% Rest of Report
+
+\end{document}
+% ======== For Reference =============
+% H parameter for the figure environment 
+% keeps it from floating
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{FIG2_1b}
+	\caption{Convolution of Identical Unit Step Sequences}
+	\label{fig:21b}
+\end{figure}
+% To turn off caption numbering place this:
+%\captionsetup[figure]{labelformat=empty}
+% Before the figure, To turn back on:
+%captionsetup[figure]{labelformat=default}
+\begin{equation}
+	\begin{array}{rcl}
+	y[n] &=& 0.5x[n]+x[n-1]+2x[n-2]\\
+	y[n] &=& 0.8y[n-1]+2x[n]\\
+	y[n]-0.8y[n-1] &=& 2x[n-1]
+	\end{array}
+\end{equation}
+
+\begin{subequations}
+	\begin{align}
+		h[n] &= 2\delta[n+1]-2\delta[n-1]\\
+		x[n] &= \delta[n] + \delta[n-2]
+	\end{align}
+\end{subequations}
+
+\renewcommand*\contentsname{ }
+\tableofcontents
+\listoffigures
+
+% Pygmentize:
+% -f : formatter
+% -l : language lexer
+% -o : output code
+
+pygmentize -f latex -l octave -o maincode.tex LA_5.m

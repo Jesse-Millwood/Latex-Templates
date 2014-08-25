@@ -6,7 +6,7 @@
    (TeX-run-style-hooks
     "latex2e"
     "/home/jesse/Latex/Templates/Pygments"
-    "/home/jesse/Latex/Templates/title"
+    "./title"
     "article"
     "art10"
     "geometry"
@@ -18,7 +18,10 @@
     "color"
     "inputenc"
     "float"
-    "fixltx2e")
+    "fixltx2e"
+    "multicol"
+    "listings"
+    "fancyhdr")
    (TeX-add-symbols
     "CLASS"
     "Partner"

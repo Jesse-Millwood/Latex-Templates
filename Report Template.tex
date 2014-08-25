@@ -24,15 +24,48 @@
 % For text subscripts
 \usepackage{fixltx2e}
 
+\usepackage{multicol}
+
+\usepackage{listings}
+\usepackage{color}
+
+\usepackage{fancyhdr}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Lisp,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=none,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+
 \input{/home/jesse/Latex/Templates/Pygments.tex}
 
 
 \begin{document}
 % Title Page
-\input{/home/jesse/Latex/Templates/title.tex}
+\input{./title.tex}
 % Define Page Geometry
 {\newgeometry{left=0.8in, right=0.8in, top=1in, bottom=1in}
 % Page Numbers
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Lisp Notes}
+\rfoot{Page \thepage}
 \pagenumbering{arabic}
 % No paragraph indents
 \setlength{\parindent}{0cm}
@@ -82,7 +115,15 @@ Case & $Z_c$          & $l$           & $c$       \\ \hline
 \label{tbl:calcd}
 \end{table}
 
+% Code Snippet:
+\begin{lstlisting}
+  code snippet
+\end{lstlisting}
 
+% bulleted list
+\begin{itemize}
+\item this is an item
+\end{itemize}
 
 \renewcommand*\contentsname{ }
 \tableofcontents
